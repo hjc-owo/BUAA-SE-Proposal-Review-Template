@@ -1,0 +1,253 @@
+%% %%=================================================================
+%% %% <UTF-8>
+%% %% 北航学位论文模板使用样例
+%% %% 请检查下列文件是否完整.
+%% %%-----------
+%% %% def/buaa.cls                  : LaTeX宏模板文件
+%% %% simfang.ttf               ： 仿宋字
+%% %% simhei.ttf                ： 黑体字
+%% %% simkai.ttf                ： 楷体字
+%% %% simsun.ttc                ： 宋体字
+%% %% def/GBT7714-2015.bst      : 国标参考文献BibTeX样式文件2015(https://github.com/zepinglee/gbt7714-bibtex-style)
+%% %% def/GBT7714-2015-NoWarning.bst      : 国标参考文献BibTeX样式文件2015,在参考文献中不再提示缺失信息
+%% %% def/logo-buaa.eps         : 论文封皮北航字样
+%% %% def/head-doctor.eps       : 论文封皮学术博士学位论文标题(华文行楷字体替代解决方案)
+%% %% def/head-prodoctor.eps    : 论文封皮专业博士学位论文标题(华文行楷字体替代解决方案)
+%% %% def/head-master.eps       : 论文封皮学术硕士学位论文标题(华文行楷字体替代解决方案)
+%% %% def/head-professional.eps : 论文封皮专业硕士学位论文标题(华文行楷字体替代解决方案)
+%% %% tex/*.tex                 : 本模板样例中的独立章节
+%% %%-----------
+%% %% 请统一使用UTF-8编码.
+%% %%=================================================================
+
+%=================================================================
+% buaa基于ctexbook模板
+% 论文样式参考自二〇二五年九月版《北京航空航天大学研究生学位论文撰写规范》
+%======================
+% 模板导入:
+% \documentclass[thesis,permission,printtype,ostype,titlelength,subjecttype,<ctexbookoptions>]{buaa}
+%======================
+% 模板选项:
+%======================
+% I.论文类型(thesis)
+%--------------------
+% a.学术硕士论文（master）[缺省值]
+% b.专业硕士论文（professional）
+% c.学术博士论文（doctor）
+% d.专业博士论文（prodoctor）
+%--------------------
+% II.密级(permission)
+%--------------------
+% a.公开（public）[缺省值]
+% b.内部（privacy）
+% c.秘密（secret=secret3）
+% c.1.秘密3年（secret3）
+% c.2.秘密5年（secret5）
+% c.3.秘密10年（secret10）
+% c.4.秘密永久（secret*）
+% d.机密（classified=classified5）
+% d.1.机密3年（classified3）
+% d.2.机密5年（classified5）
+% d.3.机密10年（classified10）
+% d.4.机密永久（classified*）
+% e.绝密（topsecret=topsecret10）
+% e.1.绝密3年（topsecret3）
+% e.2.绝密5年（topsecret5）
+% e.3.绝密10年（topsecret10）
+% e.4.绝密永久（topsecret*）
+%--------------------
+% III.打印设置(printtype)
+%--------------------
+% a.图书馆版本（library）[缺省值]
+% b.打印版本（print）
+%--------------------
+% IV.系统类型(ostype)
+%--------------------
+% a.win（win）[缺省值]
+% b.linux (linux)
+% c.mac (mac)
+%--------------------
+% V.标题长度(titlelength) % 如果标题过长导致提名页信息移位，请将该项设置为long
+%--------------------
+% a.short(short)[缺省值]
+% b.long (long)
+%--------------------
+% V.学科类型(subjecttype) % 理工类选择STEM，社科及文学类选择HSS
+%--------------------
+% a.理工类(STEM)[缺省值]
+% b.社科及文学类 (HSS)
+%--------------------
+% VI.ctexbook设置选项(<ctexbookoptions>)
+%--------------------
+% ...
+%======================
+% 其他说明:
+% 1. Mac系统请使用mac选项，并使用XeLaTeX编译。
+% 2. 可加入额外ctexbook文档类的选项，其将会被传递给ctexbook。
+% 3. 参看示例模板 `main.tex` 及其中插入的各章节 `tex/*.tex` 熟悉模板结构和 $LaTeX$ 语法，撰写论文正文。
+% 4. 在写公式时，请不要在公式之后加入额外的空行，避免空行所导致的公式与下一行距离过大的问题。
+% 5. 在编译时，请使用xelatex进行编译。
+% 6. 在写参考文献时，可以先选用GBT7714-2015.bst来查看缺少哪些关键内容，进行补全，如果存在某些内容找不到的问题，则可以使用GBT7714-2015-NoWarning.bst来不显示这些缺乏信息。
+% 7. 在写表时，如果存在上下两个线加粗的需求，可以使用\toprule[], \midrule[] 和 \bottomrule[] 来加粗三线表的三条线。
+% 8. 在写论文时，可根据tex文件里的注释信息来修改本文的密级，专硕学硕等内容。
+% 9. 如果标题过长导致提名页信息移位，请将标题长度项设置为long。
+
+%=================================================================
+
+% 在此修改 论文类型，密级，打印设置，系统类型，标题长短，学科类型
+% 学科类型需填写“STEM”或者“HSS”，该项会影响章节条标题的形式
+\documentclass[master,public,library,win,short,STEM,AutoFakeBold,proposal]{def/buaa}
+% proposal表示开题报告，review表示文献综述
+
+%\setlength{\abovedisplayskip}{1pt}
+%\setlength{\belowdisplayskip}{1pt}
+%\setlength{\abovedisplayshortskip}{1pt}
+%\setlength{\belowdisplayshortskip}{1pt}
+
+%=================================================================
+% 开启/关闭引用编号颜色：参考文献，公式，图，表，算法 等……
+\refcolor{off}   % 开启: on; 关闭: off[默认];
+% 空白页留字，如果不需要空白页显示任何内容则删去方括号及其中的内容即可
+\emptypagewords{[ -- This page is a preset empty page -- ]}
+
+%=================================================================
+% buaa模板已内嵌以下LaTeX工具包:
+%--------------------
+% ifthen, etoolbox, titletoc, remreset,
+% geometry, fancyhdr, setspace,
+% float, graphicx, subfigure, epstopdf,
+% array, enumitem,
+% booktabs, longtable, multirow, caption,
+% listings, algorithm2e, amsmath, amsthm,
+% hyperref, pifont, color, soul,
+% ---
+% For Win: times
+% For Lin: newtxtext, newtxmath
+% For Mac: times, fontspec
+%--------------------
+% 请在此处添加额外工具包>>
+
+%=================================================================
+% buaa模板已内嵌以下LaTeX宏:
+%--------------------
+% \highlight{text} % 黄色高亮
+%--------------------
+% 请在此处添加自定义宏>>
+\usepackage{txfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+
+%%=================================================================
+% 论文题目及副标题-{中文}{英文} 注意：论文题目应严格控制在25个汉字（符）以内 
+\Title{北航软件学院开题报告/文献综述~\LaTeX{}模板\BUAAThesis{}}{\LaTeX{} Template of Beihang University Thesis \BUAAThesis{}}
+\Subtitle{版本 \BUAAThesisVer{}}{Version \BUAAThesisVer{}}
+
+% 学科大类，对应信息页中“申请学位级别”一项的内容，默认工学
+\Branch{工学}
+
+% 英文封面申请学位的类型。
+% 学术学位博士学位论文填写“Doctor of Philosophy  in 学科英文名称”。
+% 学术学位硕士学位论文填写“Master of Arts in 学科英文名称”（哲学、文学、历史学、法学、教育学、艺术学）或“Master of Science in 学科英文名称”。获得一级学科授权的填写一级学科英文名称，获得二级学科授权的填写二级学科英文名称。
+% 专业学位博士学位论文根据实际填写“Doctor of 加专业英文名称”。
+% 专业学位硕士学位论文根据实际填写“Master of 加授予学位专业英文名称”。英文名称可参考“中国学位与研究生教育学会”网站信息。
+\Degree{Master of Science in Control Science and Engineering}
+
+% 院系-{中文}{英文}，专业，研究方向，一级学科，学科方向（学术型学位）
+\Department{宇航学院}{School of Astronautics}
+\Major{控制科学与工程}
+\Feild{控制理论与智能系统}
+\Discipline{控制科学与工程}
+\Direction{控制理论与智能系统}
+
+% 导师信息-{中文名}{英文名}{职称}
+\Tutor{导师姓名}{Tutor}{教授}
+\Cotutor{副导师姓名}{Cotutor}{研究员}
+
+% 学生姓名-{中文名}{英文名}
+\Author{学生姓名}{Student}
+% 学生学号
+\StudentID{ID123456}
+% 专项计划，如无则删除
+\SpecialProg{本行仅专项计划研究生添加}
+
+% 中图分类号
+\CLC{TP391.4}
+
+% 时间节点-{年}{月}
+\DateStart{2025}{12}
+\DateEnd{2027}{6}
+\DateSubmit{2025}{12}
+
+%%=================================================================
+% 摘要-{中文}{英文}
+\Abstract{%
+  论文摘要是对论文研究内容的高度概括，应体现论文工作的核心思想。博士学
+  位论文的中文摘要一般约800～1200字；硕士学位论文的中文摘要一般约500字。摘
+  要内容应涉及本项科研工作的目的和意义、研究思想和方法、研究成果和结论，博
+  士学位论文应突出论文的创造性成果，硕士学位论文应突出论文的新见解。应具有
+  独立性和自含性，即应是一篇简短但意义完整的文章。论文摘要中不要出现图片、
+  图表、表格或其他插图材料。
+  
+  论文的关键词，是为了文献标引工作从论文中选取出来用以表示全文主题内容
+  信息的单词或术语，关键词一般为3～5个，按词条的外延层次排列（外延大的排在
+  前面）。每个关键词之间用逗号间隔，最后一个关键词后不缀标点符号。
+  
+  论文摘要的中文版与英文版文字内容要对应。从中文摘要开始编写页码并采用
+  双面印刷。“Keywords”与中文摘要部分的关键词对应，每个关键词之间用逗号间隔。
+  }{
+  The abstract is a concise summary of the research content of the thesis, reflecting the core ideas of the work. For a doctoral dissertation, the Chinese abstract is typically around 800–1,200 words, while for a master's thesis, it is generally about 500 words. The abstract should address the purpose and significance of the research, the methodology and approach, as well as the key findings and conclusions. Doctoral dissertations should emphasize original contributions, while master's theses should highlight novel insights. The abstract must be self-contained and independent, functioning as a complete yet concise standalone text. Figures, charts, tables, or other illustrative materials should not appear in the abstract.
+  
+  Keywords are terms or phrases selected from the thesis to represent the main thematic content for indexing purposes. Typically, 3–5 keywords are required, arranged in hierarchical order of scope (with broader terms listed first). Keywords are separated by semicolons, with no punctuation following the last keyword.
+  
+  The Chinese and English versions of the abstract must align in content. Page numbering begins with the Chinese abstract, and the document should be printed double-sided. The "Keywords" section in the English abstract corresponds to the Chinese version, with terms similarly separated by semicolons.
+}
+% 关键字-{中文}{英文}
+\Keyword{北航，学位论文，博士，硕士，中文，\LaTeX{}模板，\BUAAThesis{}}{BeiHang, Degree thesis, PhD, Master, Chinese, \LaTeX{} template, \BUAAThesis{}}
+
+% 图表目录
+\Listfigtab{off} % 启用: on[默认]; 关闭: off;
+
+\begin{document}
+%%=================================================================
+% 标题级别
+%--------------------
+% \chapter{1 章}
+% \section{1.1 小节}
+% \subsection{1.1.1 条}
+% \subsubsection{1.1.1.1}
+% \paragraph{1.1.1.1.1}
+% \subparagraph{1.1.1.1.1.1}
+%--------------------
+%%=================================================================
+% \emptypage：插入不计页码的空白页。如果需要第一章第一页从右页起，可以用这条命令插入一张空白页。
+
+% 说明
+\input{tex/chap_instruction}
+
+% 示例
+\input{tex/chap_sample}
+
+% 总结
+% \input{tex/chap_summary}
+
+% 参考文献
+% 选用参考文献格式
+
+\Bib{def/GBT7714-2015-NoWarning.bst}{ref.bib}
+
+% 附录
+% \input{tex/chap_appendix}
+
+% 攻读学位期间成果
+% \input{tex/chap_achievement}
+
+% 致谢
+% \input{tex/chap_acknowledge}
+
+% 作者简介
+% \input{tex/chap_biography}
+
+\vspace{5cm}
+
+\end{document}

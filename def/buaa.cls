@@ -51,6 +51,12 @@
 		You have not specified the THESIS option. The word thesis should be replaced by one of the following thesis type: master(default), professional, doctor, prodoctor.
 }}
 
+\DeclareOption{review}{\gdef\@doctype{review}}
+\DeclareOption{proposal}{\gdef\@doctype{proposal}}
+\DeclareOption{doctype}{\ClassWarning{buaa}{%
+		You have not specified the DOCTYPE option. The word thesis should be replaced by one of the following doc type: review (default), proposal.
+}}
+
 %% 密级
 \DeclareOption{public}{\gdef\@permission{public}}             % 公开
 \DeclareOption{privacy}{\gdef\@permission{privacy}}           % 内部
@@ -107,8 +113,8 @@
 \DeclareOption{Professional}{\gdef\@thesis{professional}}
 \DeclareOption{Doctor}{\gdef\@thesis{doctor}}
 \DeclareOption{ProDoctor}{\gdef\@thesis{prodoctor}}
-\DeclareOption{review}{\renewcommand{\@thesis}{review}}
-\DeclareOption{proposal}{\renewcommand{\@thesis}{proposal}}
+\DeclareOption{Review}{\gdef\@doctype{review}}
+\DeclareOption{Proposal}{\gdef\@doctype{proposal}}
 \DeclareOption{Public}{\gdef\@permission{public}}
 \DeclareOption{Privacy}{\gdef\@permission{privacy}}
 \DeclareOption{Secret}{\gdef\@permission{secret3}}
@@ -138,7 +144,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption,fontset=none}{ctexbook}}
 
 %% 默认选项配置
-\ExecuteOptions{master,public,library,win,short,STEM,a4paper,sub4section}
+\ExecuteOptions{master,review,public,library,win,short,STEM,a4paper,sub4section}
 \ProcessOptions\relax
 
 %% 引用ctexbook: 小4,1.5倍行距
@@ -717,8 +723,8 @@ Extension = .ttc
 	%\fancyhead[CE]{\zihao{-5} \leftmark}
     \fancyhead[L]{\zihao{-5} School of Software}
     \fancyhead[C]{\zihao{-5}%
-        \ifthenelse{\equal{\@thesis}{review}}{文献综述}{%
-            \ifthenelse{\equal{\@thesis}{proposal}}{开题报告}{}% <--- 这里加了一对空括号
+        \ifthenelse{\equal{\@doctype}{review}}{文献综述}{%
+            \ifthenelse{\equal{\@doctype}{proposal}}{开题报告}{}% <--- 这里加了一对空括号
         }%
     }
     \fancyhead[R]{\zihao{-5} 北航软件学院}
@@ -746,8 +752,8 @@ Extension = .ttc
         \huawenxingkai \zihao{0}
         \ifthenelse{\equal{\@thesis}{doctor} \OR \equal{\@thesis}{prodoctor}}{博士毕业论文}{硕士毕业论文}\\
 		\vspace{-20pt}
-        \ifthenelse{\equal{\@thesis}{review}}{文献综述}{%
-            \ifthenelse{\equal{\@thesis}{proposal}}{开题报告}{}%
+        \ifthenelse{\equal{\@doctype}{review}}{文献综述}{%
+            \ifthenelse{\equal{\@doctype}{proposal}}{开题报告}{}%
         }
 		\centering
 

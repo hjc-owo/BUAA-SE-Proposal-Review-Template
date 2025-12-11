@@ -903,7 +903,7 @@ Extension = .ttc
 \newcommand{\Bib}[2]{%参考文献
 	\bibliographystyle{#1}
 	% \clearpage
-	\pagestyle{postref}
+	% \pagestyle{postref}
 	\phantomsection
 	\addcontentsline{toc}{chapter}{参考文献}
 	\bibliography{#2}

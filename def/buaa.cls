@@ -784,8 +784,8 @@ Extension = .ttc
 				\\ 专~~~~项~~~~计~~~~划 & \@specialprog
 				} \\
                 论~文~起~止~时~间 & \@datestartyear~年~\@datestartmonth~月 $\sim$ \@dateendyear~年~\@dateendmonth~月 \\
-                \ifthenelse{\equal{\@thesis}{review}}{文献综述}{%
-                    \ifthenelse{\equal{\@thesis}{proposal}}{开题报告}{论文}%
+                \ifthenelse{\equal{\@doctype}{review}}{文献综述}{%
+                    \ifthenelse{\equal{\@doctype}{proposal}}{开题报告}{论文}%
                 }提交时间 & \@datesubmityear~年~\@datesubmitmonth~月
 			\end{tabular}
 		\end{spacing}

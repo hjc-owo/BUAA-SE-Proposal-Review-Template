@@ -12,4 +12,6 @@
 
 本模板旨在解决北航软件学院研究生在撰写 **文献综述（Literature Review）** 和 **开题报告（Proposal Report）** 时，格式与学校毕业论文模板不一致的问题。
 
+本模板使用了 fontspec、xeCJK 等依赖系统字体与 Unicode 的宏包，以确保中文、英文字体及数学符号的正确渲染，因此请使用 **XeLaTeX** 编译。
+
 `README_buaa.md` 是北京航空航天大学硕博学位论文 LaTeX 模板的 readme 原文。

@@ -712,7 +712,7 @@ Extension = .ttc
 	
  %  \fancyfoot[C]{\zihao{5} \uppercase\expandafter{\romannumeral \thepage}}
 	\setcounter{page}{1}
-	\abstructkeyword
+	\ifthenelse{\equal{\@doctype}{proposal}}{}{\abstructkeyword}
 	\makecontextlist
 	\sign
 	\abbreviation
@@ -774,7 +774,7 @@ Extension = .ttc
 			\begin{tabular}{p{6cm}<{\centering}p{8cm}<{\raggedright}}
 				作~~~~者~~~~姓~~~~名  & \@authorcn \\
                 作~~~~者~~~~学~~~~号  & \@studentid \\
-				\ifthenelse{\equal{\@thesis}{master} \OR \equal{\@thesis}{doctor}}{学~~~~科~~~~专~~~~业}{\ifthenelse{\equal{\@thesis}{professional} \OR \equal{\@thesis}{prodoctor}}{专业名称}{}}  & \@major \\
+				\ifthenelse{\equal{\@thesis}{master} \OR \equal{\@thesis}{doctor}}{学~~~~科~~~~专~~~~业}{\ifthenelse{\equal{\@thesis}{professional} \OR \equal{\@thesis}{prodoctor}}{专~~~~业~~~~名~~~~称}{}}  & \@major \\
 				指~~~~导~~~~教~~~~师  & \@tutorcn\hspace{1.4em}\@tutordegree \\
 				\ifthenelse{\isundefined{\@cotutorcn}}{}{%
 					& \@cotutorcn\hspace{1.4em}\@cotutordegree\\

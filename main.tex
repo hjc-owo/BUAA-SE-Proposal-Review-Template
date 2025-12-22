@@ -8,13 +8,10 @@
 %% %% simhei.ttf                ： 黑体字
 %% %% simkai.ttf                ： 楷体字
 %% %% simsun.ttc                ： 宋体字
+%% %% huawenxingkai.ttf         ： 华文行楷
 %% %% def/GBT7714-2015.bst      : 国标参考文献BibTeX样式文件2015(https://github.com/zepinglee/gbt7714-bibtex-style)
 %% %% def/GBT7714-2015-NoWarning.bst      : 国标参考文献BibTeX样式文件2015,在参考文献中不再提示缺失信息
 %% %% def/logo-buaa.eps         : 论文封皮北航字样
-%% %% def/head-doctor.eps       : 论文封皮学术博士学位论文标题(华文行楷字体替代解决方案)
-%% %% def/head-prodoctor.eps    : 论文封皮专业博士学位论文标题(华文行楷字体替代解决方案)
-%% %% def/head-master.eps       : 论文封皮学术硕士学位论文标题(华文行楷字体替代解决方案)
-%% %% def/head-professional.eps : 论文封皮专业硕士学位论文标题(华文行楷字体替代解决方案)
 %% %% tex/*.tex                 : 本模板样例中的独立章节
 %% %%-----------
 %% %% 请统一使用UTF-8编码.
@@ -25,16 +22,21 @@
 % 论文样式参考自二〇二五年九月版《北京航空航天大学研究生学位论文撰写规范》
 %======================
 % 模板导入:
-% \documentclass[thesis,permission,printtype,ostype,titlelength,subjecttype,<ctexbookoptions>]{buaa}
+% \documentclass[thesis,doctype,permission,printtype,ostype,titlelength,subjecttype,<ctexbookoptions>]{buaa}
 %======================
 % 模板选项:
 %======================
-% I.论文类型(thesis)
+% I.1论文类型(thesis)
 %--------------------
 % a.学术硕士论文（master）[缺省值]
 % b.专业硕士论文（professional）
 % c.学术博士论文（doctor）
 % d.专业博士论文（prodoctor）
+%--------------------
+% I.2文档类型(doctype)
+%--------------------
+% a. 文献综述（review）[缺省值]
+% b. 开题报告（proposal）
 %--------------------
 % II.密级(permission)
 %--------------------
@@ -97,7 +99,6 @@
 % 在此修改 论文类型，密级，打印设置，系统类型，标题长短，学科类型
 % 学科类型需填写“STEM”或者“HSS”，该项会影响章节条标题的形式
 \documentclass[master,review,public,library,win,short,STEM,AutoFakeBold]{def/buaa}
-% proposal表示开题报告，review表示文献综述
 
 %\setlength{\abovedisplayskip}{1pt}
 %\setlength{\belowdisplayskip}{1pt}
